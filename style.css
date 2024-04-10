@@ -1,0 +1,45 @@
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: rgba(47, 184, 248, 0.934);
+  margin: 0;
+  padding: 2rem;
+}
+
+nav > :nth-child(1) {
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav > :nth-child(2) {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+}
+
+.container {
+  background-color: brown;
+  height: 100vh;
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.symbol_input {
+  width: 15rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border: 0;
+  padding: 0.5rem;
+}
+
+.button {
+  width: 4rem;
+  height: 2rem;
+  transform: translateX(5rem);
+}
