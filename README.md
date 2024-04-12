@@ -3,3 +3,4 @@ eg (iob.bse)
 
 use bse for Indian stocks
 
+https://djaynii.github.io/stocks/
