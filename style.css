@@ -73,4 +73,5 @@ nav > :nth-child(1) {
   color: white;
   background-color: #3d9710;
   display: none;
+  flex-direction: column;
 }
