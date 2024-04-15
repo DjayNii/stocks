@@ -126,4 +126,5 @@ input {
   color: white;
   position: absolute;
   display: none;
+  flex-direction: column;
 }
