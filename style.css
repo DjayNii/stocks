@@ -32,6 +32,13 @@ nav > :nth-child(1) {
   transform: translate(2rem, 6.688rem);
 }
 
+input {
+  color: white;
+  padding-left: 2rem;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+}
+
 .symbol_input {
   width: 14.25rem;
   height: 1.75rem;
@@ -63,14 +70,60 @@ nav > :nth-child(1) {
 
 .bottom {
   padding: 1rem;
-  height: 30.5rem;
+  height: 9.813rem;
+  width: 20rem;
+  background-color: rgb(14, 26, 8);
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+}
+
+.blurLayer {
+  background-color: rgba(131, 187, 99, 0.275);
+  transform: translate(10px, 15px);
+  width: 95%;
+  height: 80%;
+  border-radius: 23px;
+  filter: blur(30px);
 }
 
 .info {
   color: white;
-  background-color: #3d9710;
+  display: none;
+  height: 9.23rem;
+  width: 20rem;
+  position: absolute;
+  transform: translateY(-12rem);
+  flex-direction: column;
+}
+
+.info > p {
+  font-size: 0.8rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.top1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.top2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.topleft {
+  display: flex;
+  flex-direction: column;
+}
+
+.topright {
+  display: flex;
+  flex-direction: column;
+}
+
+.rsidiv {
+  color: white;
+  position: absolute;
   display: none;
 }

@@ -4,6 +4,8 @@ async function gettingData() {
 
     const infoContainer = document.querySelector(".info");
 
+    const rsiContainer = document.querySelector(".rsidiv");
+
     const symbol = inputField.value.toUpperCase();
     console.log(symbol);
 
@@ -49,14 +51,34 @@ async function gettingData() {
 
     console.log(changePercent);
 
-    infoContainer.innerHTML = `<p>${stockName}</p>
-    <p> ${symbolNAME} </p>
-    <p> ${price} </p>
-    <p> ${changePercent}</p>
-    <p>RSI Value</p> 
-    <p> ${rsi}</p>`;
+    infoContainer.innerHTML = `
+    <div class = "top1">
+    <p class = "stockName">${stockName}</p>
+    <p class = "symbolName"> ${symbolNAME} </p>
+    </div>
+    <div class = "top2">
+    <div class = topright>
+    <p class = "price"> ${price} </p>
+    <p class = "ChangePercent"> ${changePercent}</p>
+    </div>
+    <div class = topleft>
+    <p class = "RsiVAlue">RSI Value</p> 
+    <p class = "RSI"> ${rsi}</p>
+    </div>
+    </div>`;
 
     infoContainer.style.display = "flex";
+
+    if (rsi > 70) {
+      rsiContainer.innerHTML = `<p>sell</p>`;
+      rsiContainer.style.display = "flex";
+    } else if (rsi < 30) {
+      rsiContainer.innerHTML = `<p>buy</p>`;
+      rsiContainer.style.display = "flex";
+    } else {
+      rsiContainer.innerHTML = `<p>hold</p>`;
+      rsiContainer.style.display = "flex";
+    }
   } catch (error) {
     console.log(error);
   }
