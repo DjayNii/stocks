@@ -7,8 +7,7 @@ async function gettingData() {
     const rsiContainer = document.querySelector(".rsidiv");
 
     const displayResultContainer = document.querySelector(".bottom");
-
-    displayResultContainer.style.display = "flex";
+    const displayResultContainer2 = document.querySelector(".bottom2");
 
     const symbol = inputField.value.toUpperCase();
     console.log(symbol);
@@ -76,6 +75,8 @@ async function gettingData() {
     </div>
     </div>`;
 
+    displayResultContainer.style.display = "flex";
+    displayResultContainer2.style.display = "flex";
     infoContainer.style.display = "flex";
 
     if (rsi > 70) {
