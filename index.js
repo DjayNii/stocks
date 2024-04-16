@@ -6,6 +6,10 @@ async function gettingData() {
 
     const rsiContainer = document.querySelector(".rsidiv");
 
+    const displayResultContainer = document.querySelector(".bottom");
+
+    displayResultContainer.style.display = "flex";
+
     const symbol = inputField.value.toUpperCase();
     console.log(symbol);
 
@@ -46,7 +50,12 @@ async function gettingData() {
     const stockName = stockData["2. name"];
 
     const changePercent = dayChange["Global Quote"]["10. change percent"];
-    const symbolNAME = dayChange["Global Quote"]["01. symbol"];
+    const smbNAME = dayChange["Global Quote"]["01. symbol"];
+
+    const parts = smbNAME.split(".");
+
+    const SYMBOl = parts[0];
+
     const price = dayChange["Global Quote"]["08. previous close"];
 
     console.log(changePercent);
@@ -54,7 +63,7 @@ async function gettingData() {
     infoContainer.innerHTML = `
     <div class = "top1">
     <p class = "stockName">${stockName}</p>
-    <p class = "symbolName"> ${symbolNAME} </p>
+    <p class = "symbolName"> ${SYMBOl} </p>
     </div>
     <div class = "top2">
     <div class = topright>
