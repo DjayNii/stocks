@@ -9,6 +9,8 @@ async function gettingData() {
     const displayResultContainer = document.querySelector(".bottom");
     const displayResultContainer2 = document.querySelector(".bottom2");
 
+    const blurLayer = document.querySelector(".blurLayer2");
+
     const symbol = inputField.value.toUpperCase();
     console.log(symbol);
 
@@ -17,7 +19,7 @@ async function gettingData() {
     );
 
     const responce2 = await fetch(
-      `https://www.alphavantage.co/query?function=RSI&symbol=${symbol}&interval=monthly&time_period=10&series_type=open&apikey=70N9808NO57B3S0I`
+      `https://www.alphavantage.co/query?function=RSI&symbol=${symbol}&interval=weekly&time_period=10&series_type=open&apikey=70N9808NO57B3S0I`
     );
 
     const responce3 = await fetch(
@@ -80,14 +82,41 @@ async function gettingData() {
     infoContainer.style.display = "flex";
 
     if (rsi > 70) {
-      rsiContainer.innerHTML = `<p>sell</p>`;
+      rsiContainer.innerHTML = `
+      <div  class = "signal">
+      <p>SELL</p>
+      </div>
+      <div class = "suggestion">
+      <p>Over-Bought zone </p> 
+      <p>May lead to short positions or profits, but watch out for bearish reversals</p>
+      </div>`;
       rsiContainer.style.display = "flex";
+      displayResultContainer2.style.backgroundColor = "#51ca14";
+      blurLayer.style.backgroundColor = "#77f837;";
     } else if (rsi < 30) {
-      rsiContainer.innerHTML = `<p>buy</p>`;
+      rsiContainer.innerHTML = `
+      <div  class = "signal">
+      <p>BUY</p>
+      </div>
+      <div class = "suggestion">
+      <p>Over-Sold zone </p> 
+      <p>May lead to long positions or buying opportunities, but watch out for bullish reversals</p>
+      </div>`;
       rsiContainer.style.display = "flex";
+      displayResultContainer2.style.backgroundColor = "#CE2029";
+      blurLayer.style.backgroundColor = "#F11924";
     } else {
-      rsiContainer.innerHTML = `<p>hold</p>`;
+      rsiContainer.innerHTML = `
+      <div  class = "signal">
+      <p>HOLD</p>
+      </div>
+      <div class = "suggestion">
+      <p>Market neutral</p> 
+      <p>May lead to cautious trading as there are no clear signals for buying or selling</p>
+      </div>`;
       rsiContainer.style.display = "flex";
+      displayResultContainer2.style.backgroundColor = "#110C09";
+      blurLayer.style.backgroundColor = "#483C32";
     }
   } catch (error) {
     console.log(error);
