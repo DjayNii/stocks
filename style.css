@@ -239,3 +239,17 @@ input {
   font-family: "Montserrat", sans-serif;
   margin: 0;
 }
+
+.instructionsConstiner {
+  color: #050903;
+  height: 90%;
+  width: 90%;
+  border-radius: 2rem;
+  top: 3.5rem;
+  right: 0;
+  position: absolute;
+  background: linear-gradient(to top left, #77f837, #51ca14);
+  z-index: 5;
+  display: none;
+  pointer-events: none;
+}

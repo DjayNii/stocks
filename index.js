@@ -122,3 +122,34 @@ async function gettingData() {
     console.log(error);
   }
 }
+
+const instructionsButton = document.querySelector(".instructions");
+const instructions = document.querySelector(".instructionsConstiner");
+
+const animate = new TimelineLite({ paused: true, reversed: true });
+
+animate.fromTo(
+  instructions,
+  0.5,
+  {
+    opacity: 0,
+    display: "none",
+    ease: Power2.easeOut,
+  },
+  {
+    opacity: 1,
+    display: "flex",
+    onComplete: () => {
+      instructions.style.pointerEvents = "auto";
+      console.log("done");
+    },
+  }
+);
+
+instructionsButton.addEventListener("click", () => {
+  toggleTween(animate);
+});
+
+function toggleTween(tween) {
+  tween.reversed() ? tween.play() : tween.reverse();
+}
