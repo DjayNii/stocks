@@ -90,11 +90,53 @@ input {
   border-radius: 1rem;
   font-size: 36px;
   text-align: center;
-  position: fixed;
+  position: absolute;
   right: 0.5rem;
   top: 0.5rem;
   box-shadow: rgba(5, 9, 3, 0.611) 0 8px 8px 0;
   font-family: "Montserrat", sans-serif;
+  z-index: 6;
+}
+
+.instructions:hover {
+  cursor: pointer;
+}
+
+.instructionsConstiner {
+  color: #050903;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(to top left, #77f837, #51ca14);
+  z-index: 5;
+  display: none;
+  pointer-events: none;
+  font-family: "Montserrat", sans-serif;
+  flex-direction: column;
+}
+
+.Instructiontitle {
+  text-align: center;
+  margin-top: 3rem;
+}
+.instructionsConstiner > h5:first-child {
+  margin: 1rem 1rem 0 1rem;
+}
+.stockExachangeList > li {
+  list-style: none;
+  margin: 0;
+}
+
+.instructionsConstiner > img {
+  margin: 1rem 1rem 0 1rem;
+}
+
+.instructionsConstiner > h5:nth-child(2) {
+  margin: 0.5rem 1rem 0 1rem;
+}
+.instructionsConstiner :nth-child(5) {
+  margin: 3rem 1rem 0 1rem;
 }
 
 .blurLayer {
@@ -238,18 +280,4 @@ input {
   font-weight: 1000;
   font-family: "Montserrat", sans-serif;
   margin: 0;
-}
-
-.instructionsConstiner {
-  color: #050903;
-  height: 90%;
-  width: 90%;
-  border-radius: 2rem;
-  top: 3.5rem;
-  right: 0;
-  position: absolute;
-  background: linear-gradient(to top left, #77f837, #51ca14);
-  z-index: 5;
-  display: none;
-  pointer-events: none;
 }
