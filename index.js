@@ -135,10 +135,15 @@ animate.fromTo(
     opacity: 0,
     display: "none",
     ease: Power2.easeOut,
+    height: "0%",
+    width: "0%",
   },
   {
     opacity: 1,
+
     display: "flex",
+    height: "100%",
+    width: "100%",
     onComplete: () => {
       instructions.style.pointerEvents = "auto";
       console.log("done");

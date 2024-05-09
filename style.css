@@ -104,13 +104,10 @@ input {
 
 .instructionsConstiner {
   color: #050903;
-  height: 100%;
-  width: 100%;
   position: absolute;
   top: 0;
   background: linear-gradient(to top left, #77f837, #51ca14);
   z-index: 5;
-  display: none;
   pointer-events: none;
   font-family: "Montserrat", sans-serif;
   flex-direction: column;
@@ -119,6 +116,11 @@ input {
 .Instructiontitle {
   text-align: center;
   margin-top: 3rem;
+  font-size: 2rem;
+}
+
+.instructionsConstiner h2 {
+  font-size: 1rem;
 }
 .instructionsConstiner > h5:first-child {
   margin: 1rem 1rem 0 1rem;
@@ -168,7 +170,7 @@ input {
 .stockName {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 1000;
   margin: 0;
 }
 .symbolName {
@@ -191,7 +193,7 @@ input {
 .RsiVAlue {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 1000;
   margin-bottom: 0.5rem;
   margin-top: 1.438rem;
 }
