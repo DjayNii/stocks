@@ -125,6 +125,12 @@ async function gettingData() {
     }
   } catch (error) {
     console.log(error);
+    if (error instanceof TypeError) {
+      console.log("api");
+      let apiEndMSG = document.querySelector(".apiended");
+
+      apiEndMSG.style.display = "flex";
+    }
   }
 }
 
