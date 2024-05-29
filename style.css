@@ -111,6 +111,14 @@ input {
   pointer-events: none;
   font-family: "Montserrat", sans-serif;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.instructionsConstiner h5 {
+  margin: 0;
+}
+.instructionsConstiner h2 {
+  padding-left: 1rem;
 }
 
 .Instructiontitle {
@@ -122,23 +130,24 @@ input {
 .instructionsConstiner h2 {
   font-size: 1rem;
 }
-.instructionsConstiner > h5:first-child {
-  margin: 1rem 1rem 0 1rem;
+.instructionsConstiner > h5 {
+  padding-left: 1rem;
 }
-.stockExachangeList > li {
+
+.stockExachangeList {
   list-style: none;
   margin: 0;
+  font-weight: 500;
 }
 
+.stockExachangeList > p {
+  list-style: none;
+  margin: 0;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
 .instructionsConstiner > img {
   margin: 1rem 1rem 0 1rem;
-}
-
-.instructionsConstiner > h5:nth-child(2) {
-  margin: 0.5rem 1rem 0 1rem;
-}
-.instructionsConstiner :nth-child(5) {
-  margin: 3rem 1rem 0 1rem;
 }
 
 .blurLayer {
