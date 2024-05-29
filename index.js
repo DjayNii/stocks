@@ -1,5 +1,8 @@
 async function gettingData() {
   try {
+    let preloader = document.querySelector(".preloader");
+
+    preloader.style.display = "flex";
     const inputField = document.querySelector(".symbol_input");
 
     const infoContainer = document.querySelector(".info");
@@ -27,8 +30,10 @@ async function gettingData() {
     );
 
     if (!response.ok) {
+      preloader.style.display = "none";
       throw new Error(`error in getting deatils `);
     }
+    preloader.style.display = "none";
 
     const data = await response.json();
     const rsiData = await responce2.json();
@@ -158,3 +163,10 @@ instructionsButton.addEventListener("click", () => {
 function toggleTween(tween) {
   tween.reversed() ? tween.play() : tween.reverse();
 }
+
+gsap.to(".loader", {
+  rotate: 360,
+  duration: 1,
+  repeat: -1,
+  ease: "none",
+});
