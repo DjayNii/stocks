@@ -1,24 +1,35 @@
-html,
-body {
+* {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-
+html,
 body {
-  height: 100vh;
-  background-color: #050903;
+  height: 100%;
+  width: 100%;
+  background-color: black;
 }
 
 nav {
   background-color: #77f837;
   height: 12.5rem;
   margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.topnavsection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
-nav > :nth-child(1) {
+.topnavsection > p {
   margin: 0;
   display: inline-block;
-  transform: translate(2rem, 5rem);
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-style: italic;
@@ -26,10 +37,8 @@ nav > :nth-child(1) {
 }
 
 .search_bar {
-  display: flex;
-  width: 21rem;
+  display: inline-flex;
   column-gap: 0.438rem;
-  transform: translate(2rem, 6.688rem);
 }
 
 input {
@@ -49,10 +58,10 @@ input {
 
 .symbol_input::placeholder {
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  transform: translate(0.625rem, 0.125rem);
+  transform: translateX(-0.3rem);
 }
 
 .symbol_input::-moz-focus-inner {
