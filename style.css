@@ -112,7 +112,7 @@ input {
   cursor: pointer;
 }
 
-.instructionsConstiner {
+.instructionsContianer {
   color: #050903;
   position: absolute;
   top: 0;
@@ -124,40 +124,17 @@ input {
   gap: 1rem;
 }
 
-.instructionsConstiner h5 {
-  margin: 0;
-}
-.instructionsConstiner h2 {
+.step_1,
+.step_2,
+.step_3 {
   padding-left: 1rem;
+  font-size: 1rem;
 }
 
 .Instructiontitle {
   text-align: center;
   margin-top: 3rem;
   font-size: 2rem;
-}
-
-.instructionsConstiner h2 {
-  font-size: 1rem;
-}
-.instructionsConstiner > h5 {
-  padding-left: 1rem;
-}
-
-.stockExachangeList {
-  list-style: none;
-  margin: 0;
-  font-weight: 500;
-}
-
-.stockExachangeList > p {
-  list-style: none;
-  margin: 0;
-  font-weight: 500;
-  margin-bottom: 0.6rem;
-}
-.instructionsConstiner > img {
-  margin: 1rem 1rem 0 1rem;
 }
 
 .blurLayer {

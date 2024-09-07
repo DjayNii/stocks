@@ -163,7 +163,7 @@ function toggleApi() {
 
 function instructionsLoader() {
   const instructionsButton = document.querySelector(".instructions");
-  const instructions = document.querySelector(".instructionsConstiner");
+  const instructions = document.querySelector(".instructionsContianer");
 
   const animate = new TimelineLite({ paused: true, reversed: true });
 
@@ -173,15 +173,14 @@ function instructionsLoader() {
     {
       opacity: 0,
       display: "none",
-      ease: Power2.easeOut,
+      ease: Power2.easeInOut,
       height: "0%",
       width: "0%",
     },
     {
       opacity: 1,
-
       display: "flex",
-      height: "100%",
+      height: "100vh",
       width: "100%",
       onComplete: () => {
         instructions.style.pointerEvents = "auto";
