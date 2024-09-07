@@ -27,7 +27,7 @@ nav > :nth-child(1) {
 
 .search_bar {
   display: flex;
-  width: 18rem;
+  width: 21rem;
   column-gap: 0.438rem;
   transform: translate(2rem, 6.688rem);
 }
@@ -40,7 +40,7 @@ input {
 }
 
 .symbol_input {
-  width: 14.25rem;
+  width: 11rem;
   height: 1.75rem;
   border-radius: 0.75rem;
   border: 0;
@@ -52,7 +52,7 @@ input {
   font-size: 1rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  transform: translate(1.625rem, 0.125rem);
+  transform: translate(0.625rem, 0.125rem);
 }
 
 .symbol_input::-moz-focus-inner {

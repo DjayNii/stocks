@@ -17,16 +17,19 @@ async function gettingData() {
     const symbol = inputField.value.toUpperCase();
     console.log(symbol);
 
+    const stockExchange = "BSE";
+    console.log(stockExchange);
+
     const response = await fetch(
-      `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}&apikey=70N9808NO57B3S0I`
+      `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${symbol}.${stockExchange}&apikey=70N9808NO57B3S0I`
     );
 
     const responce2 = await fetch(
-      `https://www.alphavantage.co/query?function=RSI&symbol=${symbol}&interval=weekly&time_period=10&series_type=open&apikey=70N9808NO57B3S0I`
+      `https://www.alphavantage.co/query?function=RSI&symbol=${symbol}.${stockExchange}&interval=daily&time_period=14&series_type=open&apikey=70N9808NO57B3S0I`
     );
 
     const responce3 = await fetch(
-      `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=70N9808NO57B3S0I`
+      `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}.${stockExchange}&apikey=70N9808NO57B3S0I`
     );
 
     if (!response.ok) {
@@ -40,6 +43,16 @@ async function gettingData() {
     const dayChange = await responce3.json();
 
     console.log(data);
+
+    if (
+      data &&
+      data.Information &&
+      data.Information.includes(
+        "Thank you for using Alpha Vantage! Our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits."
+      )
+    ) {
+      throw new Error("API limit reached. Come back tomorrow.");
+    }
     console.log(rsiData);
     console.log(dayChange);
 
@@ -124,55 +137,77 @@ async function gettingData() {
       blurLayer.style.backgroundColor = "#483C32";
     }
   } catch (error) {
-    console.log(error);
-    if (error instanceof TypeError) {
-      console.log("api");
-      let apiEndMSG = document.querySelector(".apiended");
-
-      apiEndMSG.style.display = "flex";
+    if (error.message.includes("API limit reached. Come back tomorrow.")) {
+      toggleApi();
+    } else if (error instanceof TypeError) {
+      // Handle network or fetch-related TypeErrors
+      console.error("Network error or fetch failed:", error);
+    } else {
+      // Handle other kinds of errors
+      console.error("An unexpected error occurred:", error);
     }
   }
 }
 
-const instructionsButton = document.querySelector(".instructions");
-const instructions = document.querySelector(".instructionsConstiner");
+let apiEndMSG = document.querySelector(".apiended");
 
-const animate = new TimelineLite({ paused: true, reversed: true });
+function toggleApi() {
+  const currentDisplay = window.getComputedStyle(apiEndMSG).display;
 
-animate.fromTo(
-  instructions,
-  0.5,
-  {
-    opacity: 0,
-    display: "none",
-    ease: Power2.easeOut,
-    height: "0%",
-    width: "0%",
-  },
-  {
-    opacity: 1,
-
-    display: "flex",
-    height: "100%",
-    width: "100%",
-    onComplete: () => {
-      instructions.style.pointerEvents = "auto";
-      console.log("done");
-    },
+  if (currentDisplay === "none") {
+    apiEndMSG.style.display = "flex"; /* Or your desired display value */
+  } else {
+    apiEndMSG.style.display = "none";
   }
-);
-
-instructionsButton.addEventListener("click", () => {
-  toggleTween(animate);
-});
-
-function toggleTween(tween) {
-  tween.reversed() ? tween.play() : tween.reverse();
 }
 
-gsap.to(".loader", {
-  rotate: 360,
-  duration: 1,
-  repeat: -1,
-  ease: "none",
-});
+function instructionsLoader() {
+  const instructionsButton = document.querySelector(".instructions");
+  const instructions = document.querySelector(".instructionsConstiner");
+
+  const animate = new TimelineLite({ paused: true, reversed: true });
+
+  animate.fromTo(
+    instructions,
+    0.5,
+    {
+      opacity: 0,
+      display: "none",
+      ease: Power2.easeOut,
+      height: "0%",
+      width: "0%",
+    },
+    {
+      opacity: 1,
+
+      display: "flex",
+      height: "100%",
+      width: "100%",
+      onComplete: () => {
+        instructions.style.pointerEvents = "auto";
+        console.log("done");
+      },
+    }
+  );
+
+  instructionsButton.addEventListener("click", () => {
+    toggleTween(animate);
+  });
+
+  function toggleTween(tween) {
+    tween.reversed() ? tween.play() : tween.reverse();
+  }
+}
+
+instructionsLoader();
+
+function loadingScreen() {
+  gsap.to(".loader", {
+    rotate: 360,
+    duration: 1,
+    repeat: -1,
+    ease: "none",
+  });
+}
+
+loadingScreen();
