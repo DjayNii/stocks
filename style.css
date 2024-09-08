@@ -344,6 +344,9 @@ input {
 }
 
 @media screen and (min-width: 600px) and (max-width: 950px) {
+  .apiended {
+    font-size: 1.5vw;
+  }
   .topnavsection {
     gap: 2vw;
   }
@@ -379,6 +382,9 @@ input {
 }
 
 @media screen and (min-width: 950px) and (max-width: 1140px) {
+  .apiended {
+    font-size: 1vw;
+  }
   .topnavsection {
     gap: 2vw;
   }
@@ -414,6 +420,9 @@ input {
 }
 
 @media screen and (min-width: 1140px) {
+  .apiended {
+    font-size: 1vw;
+  }
   .topnavsection {
     gap: 2vw;
   }

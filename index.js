@@ -142,6 +142,9 @@ async function gettingData() {
     } else if (error instanceof TypeError) {
       // Handle network or fetch-related TypeErrors
       console.error("Network error or fetch failed:", error);
+      alert(
+        "check your spellings buddy and try again click ? for instructions"
+      );
     } else {
       // Handle other kinds of errors
       console.error("An unexpected error occurred:", error);
