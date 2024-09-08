@@ -156,27 +156,26 @@ input {
   position: absolute;
   flex-direction: column;
   gap: 0.5rem;
+  align-items: center;
 }
 
 .top1 {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
   margin-top: 1.625rem;
-  flex-wrap: wrap;
 }
 
 .stockName {
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
+  font-size: 5vw;
   font-weight: 1000;
   margin: 0;
 }
 .symbolName {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.313rem;
+  font-size: 7vw;
   font-weight: 900;
   margin: 0;
 }
@@ -251,7 +250,7 @@ input {
   color: white;
   display: none;
   height: 100%;
-  width: 100%;
+  width: 90%;
   position: absolute;
   flex-direction: row;
   column-gap: 1.2rem;
@@ -333,6 +332,11 @@ input {
   .symbol_input::placeholder {
     font-size: 3vw;
   }
+
+  .stockName {
+    font-size: 4vw;
+  }
+
   .rsidiv {
     column-gap: 2rem;
     width: 95%;
@@ -352,6 +356,13 @@ input {
   }
   .symbol_input::placeholder {
     font-size: 2vw;
+  }
+  .stockName {
+    font-size: 3vw;
+  }
+
+  .symbolName {
+    font-size: 4vw;
   }
 
   .rsidiv {
@@ -381,6 +392,14 @@ input {
     font-size: 1.5vw;
   }
 
+  .stockName {
+    font-size: 2.5vw;
+  }
+
+  .symbolName {
+    font-size: 2.5vw;
+  }
+
   .rsidiv {
     column-gap: 3rem;
     width: 98%;
@@ -407,6 +426,14 @@ input {
   }
   .symbol_input::placeholder {
     font-size: 1vw;
+  }
+
+  .stockName {
+    font-size: 2vw;
+  }
+
+  .symbolName {
+    font-size: 2vw;
   }
 
   .rsidiv {
